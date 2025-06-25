@@ -1,0 +1,11 @@
+{
+	"id": "right-side-daily-notes",
+	"name": "Right Side Daily Notes",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Right side positioning of your daily notes",
+	"author": "Grey Cardinal",
+	"authorUrl": "https://github.com/GreyCardinal59",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
