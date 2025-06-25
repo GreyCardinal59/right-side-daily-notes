@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, WorkspaceLeaf, TFile, moment } from 'obsidian';
+import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, WorkspaceLeaf, TFile, moment, setIcon } from 'obsidian';
 
 // Remember to rename these classes and interfaces!
 
@@ -175,6 +175,15 @@ export default class DailyNotesInSidebarPlugin extends Plugin {
 			}
 
 			await this.dailyNotesLeaf.openFile(file, { active: false });
+
+			// @ts-expect-error tabHeaderEl is available at runtime, but not in types
+			const tabHeaderEl = this.dailyNotesLeaf.tabHeaderEl;
+			if (tabHeaderEl) {
+				const iconEl = tabHeaderEl.querySelector('.workspace-tab-header-inner-icon');
+				if (iconEl) {
+					setIcon(iconEl, 'notebook-pen');
+				}
+			}
 		}
 	}
 
