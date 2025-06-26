@@ -2,11 +2,11 @@ import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Set
 
 // Remember to rename these classes and interfaces!
 
-interface MyPluginSettings {
+interface DailyNotesInSidebarSettings {
 	mySetting: string;
 }
 
-const DEFAULT_SETTINGS: MyPluginSettings = {
+const DEFAULT_SETTINGS: DailyNotesInSidebarSettings = {
 	mySetting: 'default'
 }
 
@@ -21,7 +21,7 @@ export default class DailyNotesInSidebarPlugin extends Plugin {
 	private dailyNotesLeaf: WorkspaceLeaf | null = null;
 	private lastActiveFile: TFile | null = null;
 	private isProcessingDailyNote: boolean = false;
-	settings: MyPluginSettings;
+	settings: DailyNotesInSidebarSettings;
 	private dailyNotesFormat: string | null = null;
 	private dailyNotesFolder: string | null = null;
 
@@ -234,7 +234,7 @@ export default class DailyNotesInSidebarPlugin extends Plugin {
 	}
 }
 
-class SampleModal extends Modal {
+class DailyNotesInSidebarModal extends Modal {
 	constructor(app: App) {
 		super(app);
 	}
@@ -250,7 +250,7 @@ class SampleModal extends Modal {
 	}
 }
 
-class SampleSettingTab extends PluginSettingTab {
+class DailyNotesInSidebarSettingTab extends PluginSettingTab {
 	plugin: DailyNotesInSidebarPlugin;
 
 	constructor(app: App, plugin: DailyNotesInSidebarPlugin) {
